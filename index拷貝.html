@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swiper Example</title>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<style>
+    /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.company_profile {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 176px 20px;
+    background: url(bg_company_profile.jpg);
+    background-position: right 0% bottom 0%;
+    
+}
+
+.company_profile p{
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #000;
+  text-align: left;
+  line-height: 1.5;
+  padding-top: 2px;
+}
+
+.company_profile p::first-letter {
+  font-size: 7.5rem;
+  font-weight: 700;
+  -webkit-initial-letter: 4;
+          initial-letter: 4;
+          color: #053ECC;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+
+.advertorial,.area1,.area2 {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    background: blue;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+.area1 .swiper-container {
+order: 1;
+}
+
+.advertorial-img {
+order: 1;
+width: 50%;
+}
+
+.advertorial_container {
+    order: 2;
+    width: 50%;
+}
+
+.area1_container {
+order: 2;
+width: 50%;
+}
+
+.area2 .swiper-container {
+order: 2;
+}
+
+.area2_container{
+order: 1;
+width: 50%;
+}
+
+#swiper1,
+#swiper2{
+    width: 50%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* #swiper1 {
+float: left;
+}
+
+#swiper2 {
+float: right;
+} */
+
+#swiper1 swiper-button-next,
+#swiper1 swiper-button-prev{
+    position: absolute;
+}
+
+img, svg {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+img {
+    border-style: none;
+}
+
+.advertorial_container {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 0 20px;
+
+}
+
+.area1_container {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 0 20px;
+
+}
+
+.area2_container {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 0 20px;
+
+}
+
+@mixin clearfix() {
+  &::after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+
+h1 {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #fff;
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+.area2_container.podcast h1,
+.advertorial_container h1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.area2_container.podcast p,
+.advertorial_container p{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn_more {
+    display: inline-block;
+    font-size: 1.25em;
+    line-height: 1.5;
+    font-weight: 400;
+    padding: 12px 20px;
+    color: #043BC4;
+    background: #fff;
+    margin-top: 40px;
+}
+
+.btn_more:hover {
+    cursor: pointer;
+    color: #fff;
+    background: #001B60;
+}
+
+
+
+.podcast .swiper-wrapper {
+    box-sizing: border-box;
+    display: block;
+    padding: 121px 0;
+    background: url(bg_podcast.jpg);
+    background-position: right 0% bottom 0%;
+}
+
+.podcast iframe {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    /* max-width: 800px; */
+    padding: 0 80px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.podcast iframe:nth-child(1) {
+    margin-bottom: 54px;
+
+}
+
+@media (max-width: 1560px) {
+.podcast .swiper-wrapper {
+    padding: 80px 0;
+    }
+}
+
+/* @media (max-width: 1280px) {
+.podcast .swiper-wrapper {
+    padding: 40px 0;
+    }
+} */
+@media (max-width: 1280px) {
+    .company_profile {
+    padding: 20px;
+    height: 100%;
+    min-height: 448px;
+    }
+    
+    .advertorial,.area1,.area2 {
+    padding: 20px;
+    align-items: start;
+    height: 100%;
+    min-height: 448px;
+    }
+
+    .aadvertorial .advertorial-container,
+    .area1 .swiper-container,
+    .area2 .swiper-container {
+    order: 1;
+    }
+
+    .area2{
+        background: #fff;
+    }
+
+    .area2 h1,
+    .area2 p{
+        color: #000;
+    }
+
+    .area1 .swiper-container,
+    .area1_container,
+    .area2_container {
+    order: 2;
+    }
+
+    .advertorial_container,
+    .advertorial-img,
+    #swiper1,
+    #swiper2{
+        width: 100%;
+        height: auto;
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
+        /* margin: 20px; */
+    }
+
+    /* #swiper1 {
+    float: left;
+    }
+
+    #swiper2 {
+    float: left;
+    } */
+    .area1 .swiper-container,
+    .area1_container,
+    .area2_container {
+    width: 100%;
+    }
+
+    .podcast{
+    background: url(bg_podcast.jpg);
+    }
+
+    .podcast .swiper-wrapper {
+    padding: 20px 0;
+    background: none;
+    }
+
+    
+
+    .podcast .swiper-wrapper {
+    padding: 0;
+    }
+
+    .podcast iframe {
+    padding: 0;
+}
+
+}
+
+@media (max-width: 768px) {
+    .advertorial,
+    .area1,
+    .area2{
+        display: block;
+    }
+
+    .area2{
+        background: #fff;
+    }
+
+    .area2 h1,
+    .area2 p{
+        color: #000;
+    }
+
+    .advertorial_container,
+    .area1_container,
+    .area2_container {
+    margin-top: 20px;
+    }
+
+    .podcast{
+    background: url(bg_podcast.jpg);
+    }
+
+}
+
+</style>
+</head>
+<body>
+<div class="company_profile">
+    <p>
+        每個日常用電的幸福場景，都有華城電機設備與技術的身影，是社會運作的推手，更是未來推動再生能源、智慧電網的要角。
+        <br><br>
+        一份兼具使命感與發展潛力的職涯，正等待你的挑戰!
+    </p>
+</div>
+<div class="advertorial clearfix">      
+    <!-- Swiper 1 -->
+    <div class="advertorial-img">
+        <img src="img_advertorial.jpg" alt="">
+    </div>
+    <div class="advertorial_container">
+        <h1>華城電機邁開大步前行：以知識力與創新舞台賦能員工，為企業永續找到全新定義</h1>
+        <p>作為國內生產製造配電及電力變壓器、配電盤、開關設備與相關配電器材的華城電機，即便已邁入第55個年頭，但團隊依舊充滿創新活力不被傳統產業的框架束縛，更在去年（2023）榮獲「HR ASIA亞洲最佳企業雇主獎」，肯定了華城電機在員工滿意度、福祉和個人發展等方面的努力，更讓人好奇這個老字號招牌如何擄獲員工的心、一同攜手共創企業新局？</p>
+        <div class="btn_more">READ MORE</div>
+    </div>
+</div>  
+
+<div class="area2 clearfix">
+    <!-- Swiper 2 -->
+    <div class="swiper-container" id="swiper2">
+    <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide"><img src="img_carousel_workplace_environment_01.jpg" alt="Image A"></div>
+    <div class="swiper-slide"><img src="img_carousel_workplace_environment_02.jpg" alt="Image B"></div>
+    <div class="swiper-slide"><img src="img_carousel_workplace_environment_03.jpg" alt="Image C"></div>
+    <div class="swiper-slide"><img src="img_carousel_workplace_environment_04.jpg" alt="Image D"></div>
+    <div class="swiper-slide"><img src="img_carousel_workplace_environment_05.jpg" alt="Image E"></div>
+    <div class="swiper-slide"><img src="img_carousel_workplace_environment_06.jpg" alt="Image F"></div>
+    <div class="swiper-slide"><img src="img_carousel_workplace_environment_07.jpg" alt="Image G"></div>
+    <div class="swiper-slide"><img src="img_carousel_workplace_environment_08.jpg" alt="Image H"></div>
+    <div class="swiper-slide"><img src="img_carousel_workplace_environment_09.jpg" alt="Image I"></div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Navigation -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    </div>
+    <div class="area2_container">
+        <h1>人才，是華城進步的關鍵</h1>
+        <p>華城規劃一系列員工發展計畫，運用全方面的培訓賦能員工，並透過定期舉辦共識營與跨部門活動，重視員工關懷、ESG、DEI領域之發展並強化員工向心力與團隊合作，為員工與企業共同打造更美好的未來。</p>
+        
+    </div>
+</div>
+
+<div class="area1 clearfix">      
+    <!-- Swiper 1 -->
+    <div class="swiper-container" id="swiper1">
+    <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide"><img src="img_carousel_esg_01.jpg" alt="Image 1"></div>
+    <div class="swiper-slide"><img src="img_carousel_esg_02.jpg" alt="Image 2"></div>
+    <div class="swiper-slide"><img src="img_carousel_esg_03.jpg" alt="Image 3"></div>
+    <div class="swiper-slide"><img src="img_carousel_esg_04.jpg" alt="Image 4"></div>
+    <div class="swiper-slide"><img src="img_carousel_esg_05.jpg" alt="Image 5"></div>
+    <div class="swiper-slide"><img src="img_carousel_esg_06.jpg" alt="Image 6"></div>
+    <div class="swiper-slide"><img src="img_carousel_esg_07.jpg" alt="Image 7"></div>
+    <div class="swiper-slide"><img src="img_carousel_esg_08.jpg" alt="Image 8"></div>
+    <div class="swiper-slide"><img src="img_carousel_esg_09.jpg" alt="Image 9"></div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Navigation -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    </div>
+    <div class="area1_container">
+        <h1>華城電機邁開大步前行：以知識力與創新舞台賦能員工，為企業永續找到全新定義</h1>
+        <p>作為國內生產製造配電及電力變壓器、配電盤、開關設備與相關配電器材的華城電機，即便已邁入第55個年頭，但團隊依舊充滿創新活力不被傳統產業的框架束縛，更在去年（2023）榮獲「HR ASIA亞洲最佳企業雇主獎」，肯定了華城電機在員工滿意度、福祉和個人發展等方面的努力，更讓人好奇這個老字號招牌如何擄獲員工的心、一同攜手共創企業新局？</p>
+    </div>
+</div>  
+
+<div class="area2 podcast clearfix">
+    <!-- Swiper 2 -->
+    <div class="swiper-container" id="swiper2">
+    <div class="swiper-wrapper">
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175"
+          style="overflow:hidden;border-radius:10px;"
+          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+          src="https://embed.podcasts.apple.com/us/podcast/%E4%BA%BA%E6%89%8D%E6%88%B0%E6%83%85%E5%AE%A4ep-56-%E5%B9%B4%E9%81%8E-50-%E4%BB%8D%E7%AB%99%E5%9C%A8%E8%B6%A8%E5%8B%A2%E5%B0%96%E7%AB%AF%E7%9A%84%E7%94%A2%E6%A5%AD-%E6%89%93%E9%80%A0%E6%9C%AA%E4%BE%86%E9%9B%BB%E5%8A%9B%E7%B6%B2-%E4%B8%8A-%E5%90%88%E4%BD%9C%E6%8E%A8%E8%96%A6-%E8%8F%AF%E5%9F%8E%E9%9B%BB%E6%A9%9F/id1590058994?i=1000666712005"
+          data-gtm-yt-inspected-8="true" data-gtm-yt-inspected-1867436_322="true"
+          title="【快樂工作人Ep.122】業務員不靠話術，也能養出人脈的交心技巧－合作推薦：富邦人壽 Podcast"></iframe>
+
+          <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175"
+          style="overflow:hidden;border-radius:10px;"
+          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+          src="https://embed.podcasts.apple.com/tw/podcast/%E4%BA%BA%E6%89%8D%E6%88%B0%E6%83%85%E5%AE%A4ep-57-%E5%B9%B4%E9%81%8E-50-%E4%BB%8D%E7%AB%99%E5%9C%A8%E8%B6%A8%E5%8B%A2%E5%B0%96%E7%AB%AF%E7%9A%84%E7%94%A2%E6%A5%AD-%E6%89%93%E9%80%A0%E6%9C%AA%E4%BE%86%E9%9B%BB%E5%8A%9B%E7%B6%B2-%E4%B8%8B-%E5%90%88%E4%BD%9C%E6%8E%A8%E8%96%A6-%E8%8F%AF%E5%9F%8E%E9%9B%BB%E6%A9%9F/id1590058994?i=1000668237330"
+          data-gtm-yt-inspected-8="true" data-gtm-yt-inspected-1867436_322="true"
+          title="【快樂工作人Ep.122】業務員不靠話術，也能養出人脈的交心技巧－合作推薦：富邦人壽 Podcast"></iframe>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Navigation -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    </div>
+    <div class="area2_container">
+        <h1>年過50 仍站在趨勢尖端的產業！打造未來電力網</h1>
+        <p>有專家說，經濟好的時候不能缺電；而經濟不好的時候，更不能缺電。從家家戶戶都有的社區變壓器、配電盤，還有馬路上的綠色電箱，大到台北捷運裡面的供電系統配備，都有華城電機55年品牌的身影。隨著永續抬頭，新能源也成為華城電機下個階段的重點。</p>
+        
+    </div>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+var swiper1 = new Swiper('#swiper1', {
+loop: true,
+navigation: {
+nextEl: '.swiper-button-next',
+prevEl: '.swiper-button-prev',
+},
+pagination: {
+el: '.swiper-pagination',
+clickable: true,
+},
+autoplay: {
+delay: 3000, // 延遲 3 秒
+disableOnInteraction: false,
+},
+pagination: false // 關閉 pagination dots
+});
+
+var swiper2 = new Swiper('#swiper2', {
+loop: true,
+navigation: {
+nextEl: '.swiper-button-next',
+prevEl: '.swiper-button-prev',
+},
+pagination: {
+el: '.swiper-pagination',
+clickable: true,
+},
+autoplay: {
+delay: 5000, // 延遲 5 秒
+disableOnInteraction: false,
+},
+pagination: false // 關閉 pagination dots
+});
+</script>
+</body>
+</html>

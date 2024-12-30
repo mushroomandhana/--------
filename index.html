@@ -1,398 +1,121 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Swiper Example</title>
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-<style>
-    /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-body {
-    font-family: 'Noto Sans TC', sans-serif;
-}
-
-.company_profile {
-    box-sizing: border-box;
-    width: 100%;
-    height: auto;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 176px 20px;
-    background: url(bg_company_profile.jpg);
-    background-position: right 0% bottom 0%;
-    
-}
-
-.company_profile p{
-  font-size: 1.25rem;
-  font-weight: 400;
-  color: #000;
-  text-align: left;
-  line-height: 1.5;
-  padding-top: 2px;
-}
-
-.company_profile p::first-letter {
-  font-size: 7.5rem;
-  font-weight: 700;
-  -webkit-initial-letter: 4;
-          initial-letter: 4;
-          color: #053ECC;
-  font-weight: bold;
-  margin-right: 1rem;
-}
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>這樣的滋味，真好</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta property="og:title" content="這樣的滋味，真好" ></meta>
+  <meta property="og:description" content="" ></meta>
+  <meta property="og:image" content="images/fb_share_img.jpg" ></meta>
+  <meta property="og:url" content="" ></meta>
+  <meta property="og:type" content="website" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://www.cw.com.tw/images/common/favicon.ico?id=265ad65f0d9cd38e12ff" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="css/lightslider.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="css/layout.css?=2" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="css/layout2.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"  />
+  <script type="text/javascript" src="js/ajax1.10.0.min.js"></script>
+  <script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
+  <!-- <script type="text/javascript" src="js/jquery-imagefill.js"></script> -->
+  <script type="text/javascript" src="js/lightslider.js"></script>
+  <script type="text/javascript" src="js/wow.js"></script>
+  <script type="text/javascript" src="js/parallax.js"></script>
+  <script type="text/javascript" src="js/layout.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:100,300,400,500,700,900&display=swap" rel="stylesheet">
+  
 
 
-.advertorial,.area1,.area2 {
-    box-sizing: border-box;
-    width: 100%;
-    height: auto;
-    background: blue;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-}
-
-
-
-
-.area1 .swiper-container {
-order: 1;
-}
-
-.advertorial-img {
-order: 1;
-width: 50%;
-}
-
-.advertorial_container {
-    order: 2;
-    width: 50%;
-}
-
-.area1_container {
-order: 2;
-width: 50%;
-}
-
-.area2 .swiper-container {
-order: 2;
-}
-
-.area2_container{
-order: 1;
-width: 50%;
-}
-
-#swiper1,
-#swiper2{
-    width: 50%;
-    height: auto;
-    position: relative;
-    overflow: hidden;
-}
-
-/* #swiper1 {
-float: left;
-}
-
-#swiper2 {
-float: right;
-} */
-
-#swiper1 swiper-button-next,
-#swiper1 swiper-button-prev{
-    position: absolute;
-}
-
-img, svg {
-    width: 100%;
-    height: auto;
-    vertical-align: middle;
-}
-
-img {
-    border-style: none;
-}
-
-.advertorial_container {
-    box-sizing: border-box;
-    width: 50%;
-    padding: 0 20px;
-
-}
-
-.area1_container {
-    box-sizing: border-box;
-    width: 50%;
-    padding: 0 20px;
-
-}
-
-.area2_container {
-    box-sizing: border-box;
-    width: 50%;
-    padding: 0 20px;
-
-}
-
-@mixin clearfix() {
-  &::after {
-    display: block;
-    clear: both;
-    content: "";
-  }
-}
-
-h1 {
-    font-size: 2rem;
-    color: #fff;
-    font-weight: 700;
-    line-height: 1.5;
-}
-
-p {
-    font-size: 1.25rem;
-    font-weight: 400;
-    color: #fff;
-    margin-top: 20px;
-    line-height: 1.5;
-}
-
-.area2_container.podcast h1,
-.advertorial_container h1 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.area2_container.podcast p,
-.advertorial_container p{
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.btn_more {
-    display: inline-block;
-    font-size: 1.25em;
-    line-height: 1.5;
-    font-weight: 400;
-    padding: 12px 20px;
-    color: #043BC4;
-    background: #fff;
-    margin-top: 40px;
-}
-
-.btn_more:hover {
-    cursor: pointer;
-    color: #fff;
-    background: #001B60;
-}
-
-
-
-.podcast .swiper-wrapper {
-    box-sizing: border-box;
-    display: block;
-    padding: 121px 0;
-    background: url(bg_podcast.jpg);
-    background-position: right 0% bottom 0%;
-}
-
-.podcast iframe {
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-    /* max-width: 800px; */
-    padding: 0 80px;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.podcast iframe:nth-child(1) {
-    margin-bottom: 54px;
-
-}
-
-@media (max-width: 1560px) {
-.podcast .swiper-wrapper {
-    padding: 80px 0;
-    }
-}
-
-/* @media (max-width: 1280px) {
-.podcast .swiper-wrapper {
-    padding: 40px 0;
-    }
-} */
-@media (max-width: 1280px) {
-    .company_profile {
-    padding: 20px;
-    height: 100%;
-    min-height: 448px;
-    }
-    
-    .advertorial,.area1,.area2 {
-    padding: 20px;
-    align-items: start;
-    height: 100%;
-    min-height: 448px;
-    }
-
-    .aadvertorial .advertorial-container,
-    .area1 .swiper-container,
-    .area2 .swiper-container {
-    order: 1;
-    }
-
-    .area2{
-        background: #fff;
-    }
-
-    .area2 h1,
-    .area2 p{
-        color: #000;
-    }
-
-    .area1 .swiper-container,
-    .area1_container,
-    .area2_container {
-    order: 2;
-    }
-
-    .advertorial_container,
-    .advertorial-img,
-    #swiper1,
-    #swiper2{
-        width: 100%;
-        height: auto;
-        position: relative;
-        overflow: hidden;
-        box-sizing: border-box;
-        /* margin: 20px; */
-    }
-
-    /* #swiper1 {
-    float: left;
-    }
-
-    #swiper2 {
-    float: left;
-    } */
-    .area1 .swiper-container,
-    .area1_container,
-    .area2_container {
-    width: 100%;
-    }
-
-    .podcast{
-    background: url(bg_podcast.jpg);
-    }
-
-    .podcast .swiper-wrapper {
-    padding: 20px 0;
-    background: none;
-    }
-
-    
-
-    .podcast .swiper-wrapper {
-    padding: 0;
-    }
-
-    .podcast iframe {
-    padding: 0;
-}
-
-}
-
-@media (max-width: 768px) {
-    .advertorial,
-    .area1,
-    .area2{
-        display: block;
-    }
-
-    .area2{
-        background: #fff;
-    }
-
-    .area2 h1,
-    .area2 p{
-        color: #000;
-    }
-
-    .advertorial_container,
-    .area1_container,
-    .area2_container {
-    margin-top: 20px;
-    }
-
-    .podcast{
-    background: url(bg_podcast.jpg);
-    }
-
-}
-
-</style>
 </head>
+
 <body>
-<div class="company_profile">
+  <!-- Preloader -->
+  <div id="preloader">
+   <div id="status">&nbsp;</div>
+ </div>
+
+ <div class="NAV_btn_wrap"><!--nav line-->
+  <div id="nav-icon3">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div><!--nav line end-->
+
+  <div style="position:fixed; width:100%; top:0px; left:0px; z-index:6; display: none;">
+    <div id="width_num" style="float:left;"></div>
+    <div id="height_num" style="float:right;"></div>
+  </div>
+
+
+
+
+
+<div id="WRAPER"><!--wraper-->
+
+
+
+
+
+  <a href="#" class="goTop"><img src="images/gotop.png"/></a>
+
+  
+
+
+
+  <div id="HEADER"><!--header-->
+
+    <div class="menu-container">
+
+      <div class="menu-sliders">
+      </div>
+    
+        <div class="menu-sliders">
+      </div>
+    
+          <div class="menu-sliders">
+      </div>
+    
+    <div class="menu">
+      <ul>
+        <li>
+          <a class="scroll_btn" data="#sec1">企業介紹</a>
+        </li>
+        <li>
+          <a class="scroll_btn" data="#sec2">影音專區</a>
+        </li>
+        <li>
+          <a class="scroll_btn" data="#sec3">文章專區</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    
+
+    <img src="images/cw_logo.png" id="logo" />
+    <!-- <div class="bussiness_name">企業專區</div> -->
+
+    <div class="utiltity">
+      <a href="#" target="_blank" class="description_btn">訂閱天下</a>
+      <img src="images/search.png" class="utiltity_btn">
+      <img src="images/user.png" class="utiltity_btn">
+    </div>  
+
+
+  </div><!--header end-->
+
+
+
+  <div id="KV">
+    <div class="kv_bg"><img src="images/img_kv.jpg"/></div>
+  </div>  
+
+
+  <div class="company_profile" id="sec1">
     <p>
         每個日常用電的幸福場景，都有華城電機設備與技術的身影，是社會運作的推手，更是未來推動再生能源、智慧電網的要角。
         <br><br>
@@ -402,7 +125,7 @@ p {
 <div class="advertorial clearfix">      
     <!-- Swiper 1 -->
     <div class="advertorial-img">
-        <img src="img_advertorial.jpg" alt="">
+        <img src="images/img_advertorial.jpg" alt="">
     </div>
     <div class="advertorial_container">
         <h1>華城電機邁開大步前行：以知識力與創新舞台賦能員工，為企業永續找到全新定義</h1>
@@ -416,15 +139,15 @@ p {
     <div class="swiper-container" id="swiper2">
     <div class="swiper-wrapper">
     <!-- Slides -->
-    <div class="swiper-slide"><img src="img_carousel_workplace_environment_01.jpg" alt="Image A"></div>
-    <div class="swiper-slide"><img src="img_carousel_workplace_environment_02.jpg" alt="Image B"></div>
-    <div class="swiper-slide"><img src="img_carousel_workplace_environment_03.jpg" alt="Image C"></div>
-    <div class="swiper-slide"><img src="img_carousel_workplace_environment_04.jpg" alt="Image D"></div>
-    <div class="swiper-slide"><img src="img_carousel_workplace_environment_05.jpg" alt="Image E"></div>
-    <div class="swiper-slide"><img src="img_carousel_workplace_environment_06.jpg" alt="Image F"></div>
-    <div class="swiper-slide"><img src="img_carousel_workplace_environment_07.jpg" alt="Image G"></div>
-    <div class="swiper-slide"><img src="img_carousel_workplace_environment_08.jpg" alt="Image H"></div>
-    <div class="swiper-slide"><img src="img_carousel_workplace_environment_09.jpg" alt="Image I"></div>
+    <div class="swiper-slide"><img src="images/img_carousel_workplace_environment_01.jpg" alt="Image A"></div>
+    <div class="swiper-slide"><img src="images/img_carousel_workplace_environment_02.jpg" alt="Image B"></div>
+    <div class="swiper-slide"><img src="images/img_carousel_workplace_environment_03.jpg" alt="Image C"></div>
+    <div class="swiper-slide"><img src="images/img_carousel_workplace_environment_04.jpg" alt="Image D"></div>
+    <div class="swiper-slide"><img src="images/img_carousel_workplace_environment_05.jpg" alt="Image E"></div>
+    <div class="swiper-slide"><img src="images/img_carousel_workplace_environment_06.jpg" alt="Image F"></div>
+    <div class="swiper-slide"><img src="images/img_carousel_workplace_environment_07.jpg" alt="Image G"></div>
+    <div class="swiper-slide"><img src="images/img_carousel_workplace_environment_08.jpg" alt="Image H"></div>
+    <div class="swiper-slide"><img src="images/img_carousel_workplace_environment_09.jpg" alt="Image I"></div>
     </div>
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
@@ -444,15 +167,15 @@ p {
     <div class="swiper-container" id="swiper1">
     <div class="swiper-wrapper">
     <!-- Slides -->
-    <div class="swiper-slide"><img src="img_carousel_esg_01.jpg" alt="Image 1"></div>
-    <div class="swiper-slide"><img src="img_carousel_esg_02.jpg" alt="Image 2"></div>
-    <div class="swiper-slide"><img src="img_carousel_esg_03.jpg" alt="Image 3"></div>
-    <div class="swiper-slide"><img src="img_carousel_esg_04.jpg" alt="Image 4"></div>
-    <div class="swiper-slide"><img src="img_carousel_esg_05.jpg" alt="Image 5"></div>
-    <div class="swiper-slide"><img src="img_carousel_esg_06.jpg" alt="Image 6"></div>
-    <div class="swiper-slide"><img src="img_carousel_esg_07.jpg" alt="Image 7"></div>
-    <div class="swiper-slide"><img src="img_carousel_esg_08.jpg" alt="Image 8"></div>
-    <div class="swiper-slide"><img src="img_carousel_esg_09.jpg" alt="Image 9"></div>
+    <div class="swiper-slide"><img src="images/img_carousel_esg_01.jpg" alt="Image 1"></div>
+    <div class="swiper-slide"><img src="images/img_carousel_esg_02.jpg" alt="Image 2"></div>
+    <div class="swiper-slide"><img src="images/img_carousel_esg_03.jpg" alt="Image 3"></div>
+    <div class="swiper-slide"><img src="images/img_carousel_esg_04.jpg" alt="Image 4"></div>
+    <div class="swiper-slide"><img src="images/img_carousel_esg_05.jpg" alt="Image 5"></div>
+    <div class="swiper-slide"><img src="images/img_carousel_esg_06.jpg" alt="Image 6"></div>
+    <div class="swiper-slide"><img src="images/img_carousel_esg_07.jpg" alt="Image 7"></div>
+    <div class="swiper-slide"><img src="images/img_carousel_esg_08.jpg" alt="Image 8"></div>
+    <div class="swiper-slide"><img src="images/img_carousel_esg_09.jpg" alt="Image 9"></div>
     </div>
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
@@ -497,6 +220,196 @@ p {
     </div>
 </div>
 
+
+  <!-- <section class="sec_table" id="sec1">
+    <div class="sec_div switch_ta sec_des">
+      <h2>小改變大美好</h2>
+      <p>1984年麥當勞於臺灣成立第一家餐廳，在環境保護、食品安全等層面一直努力不懈，並逐步深化與臺灣在地的連結，除了選用本產優質食材，讓環境、社會、經濟和企業之間，達到永續共存、正向循環的目標，體現「這樣的滋味，真好」。</p>
+    </div>  
+    <div class="sec_div switch_div">
+      <img src="images/sec1_img.png" class="sec1_img">
+    </div>  
+  </section>
+
+
+  <section class="sec_table" id="sec2">
+    <div class="sec_div">
+     
+      <div class="film_sec">
+
+        <div>
+        <div class="file_item">
+
+            <div class="yt_wrap">
+            
+              <div class="video-container">
+                <iframe
+                  src="https://www.youtube.com/embed/l-GvEeQ2waU"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope;"
+                  allowfullscreen></iframe>
+              </div>
+            
+            </div>  
+
+            <h2 class="yt_title">麥當勞叔叔x愛洗手小隊，對抗細菌壞壞大作戰！</h2>
+            <p class="yt_txt">你知道有許多細菌壞壞偷偷躲在日常生活中嗎？別害怕，麥當勞叔叔和愛洗手小隊教你一個小撇步</p>
+
+        </div>
+
+
+        <div class="file_item">
+
+          <div class="yt_wrap">
+          
+            <div class="video-container">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/tYM9Gk65ZHM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          
+          </div>  
+
+          <h2 class="yt_title">一塊錢的力量 開啟睿睿的溫暖故事</h2>
+          <p class="yt_txt">
+            麥當勞叔叔之家慈善基金會</p>
+
+      </div>
+
+      <div class="file_item">
+
+        <div class="yt_wrap">
+        
+          <div class="video-container">
+            <iframe
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/N4Z22EPRlnM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        
+        </div>  
+
+        <h2 class="yt_title">人會退休，愛不會退休...【志工王姐的故事】</h2>
+        <p class="yt_txt">遠從三峽來台北服務的王姐，在退休的第二人生裡，堅持了10個年頭的志工生涯，究竟是什麼動力呢？</p>
+
+    </div>
+
+    <div class="file_item">
+
+      <div class="yt_wrap">
+      
+        <div class="video-container">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/GdL2AbTcp-E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      
+      </div>  
+
+      <h2 class="yt_title">「超級色票眼」蕭青陽 用色彩讓兒童輪椅不一樣!</h2>
+      <p class="yt_txt">以義氣著稱、人稱「蕭大俠」的知名設計師－蕭青陽，五度入圍美國葛萊美獎、設計超過1000張專輯包裝．號稱「色票電眼通」的他，如何挑戰跨界設計？顛覆許多人對於兒童輪椅「冷冰冰」、「病懨懨」的印象？</p>
+
+  </div>
+
+  </div>
+
+        <div class="film_nav">
+          <div class="film_btn"><img src="images/n_btn1.png"></div>
+          <div class="film_btn"><img src="images/n_btn2.png"></div>
+          <div class="film_btn"><img src="images/n_btn3.png"></div>
+          <div class="film_btn"><img src="images/n_btn4.png"></div>
+        </div>  
+
+        
+      </div>  
+      
+
+
+    </div>  
+
+    <div class="sec_div sec_des">
+      <h2>I’m Lovin’ it</h2>
+      <p>我們對於這片土地的企業社會責任從不間斷，為守護美好而堅持，從人才培育、食品安全、 在地關懷與環境保護等持續不斷的努力與投入，
+        創造共好、共享的世界，成為「更好的麥當勞」</p>
+    </div>  
+  </section>
+
+
+
+  <section class="sec_table" id="sec3">
+    <div class="sec_div switch_ta sec_des">
+      <h2>Z世代大軍來襲 麥當勞搶攻心佔率打造職場潮牌</h2>
+      <p>Z世代已成為職場生力軍！以國內速食龍頭麥當勞來說，8成以上的兼職員工皆為Z世代，人力專家李大華觀察，告別「個人英雄崇拜主義」，Z世代不再崇拜超人、雷神索爾、鋼鐵人，而是嚮往「復仇者聯盟」</p>
+      <a href="#" target="_blank">READ MORE</a>
+    </div>  
+    <div class="sec_div switch_div">
+      <img src="images/article4.png" class="sec_img">
+    </div>  
+  </section>
+
+
+  <section class="sec_table">
+    <div class="sec_div ">
+      <img src="images/article3.png" class="sec_img">
+    </div>  
+    <div class="sec_div sec_des red">
+      <h2>一起樂讀趣 親子共讀開啟無限可能</h2>
+      <p>「藉著共讀，大人與孩子的肌膚之親，有語言的溝通、心靈的交流，孩子從身體到心靈都能感受父母滿滿的親暱與愛護。和寶寶一起共讀，目的不在於知識的傳遞，而是參與、經驗親子共讀的美好！」──日本繪本大師，松居直...</p>
+      <a href="#" target="_blank">READ MORE</a>
+    </div>  
+  </section>
+
+
+  <section class="sec_table">
+    <div class="sec_div switch_ta sec_des">
+      <h2>麥當勞叔叔之家 32間房助上萬遠地就醫家庭</h2>
+      <p>「麥當勞叔叔之家」對跨縣市來台北遠地就醫的病童家庭伸出溫暖的手，提供一個「出門在外的家」。目前，約8成的入住家庭來自台中以南，平均每年幫助一萬五千個人次受惠，透過免費的住宿與關懷服務，讓遠地就醫的家庭</p>
+      <a href="#" target="_blank">READ MORE</a>
+    </div>  
+    <div class="sec_div switch_div">
+      <img src="images/article2.png" class="sec_img">
+    </div>  
+  </section>
+
+
+  <section class="sec_table">
+    <div class="sec_div ">
+      <img src="images/article1.png" class="sec_img">
+    </div>  
+    <div class="sec_div sec_des red">
+      <h2>告別塑膠吸管 台灣麥當勞帶頭推「冷飲直接喝」</h2>
+      <p>走進國內速食龍頭麥當勞，你有發現什麼改變嗎？答案是：塑膠吸管消失了！台灣麥當勞自4月中旬起逐步推行「冷飲直接喝」，目前近400家麥當勞餐廳已全面實施，不再提供塑膠吸管，在這波限塑浪潮中麥當勞也成為唯一...</p>
+      <a href="#" target="_blank">READ MORE</a>
+    </div>  
+  </section>
+ -->
+
+
+
+  <div id="FOOTER"><!--footer-->
+    
+
+     <div class="app_btn_group">
+        <a href="#" target="_blank"><img src="images/iosBadge.png" class="app_btn"></a>
+        <a href="#" target="_blank"><img src="images/androidBadge.png" class="app_btn"></a>
+     </div> 
+
+     <div class="social_btn_group">
+      <a href="#" target="_blank"><img src="images/ig_logo.png" class="soclai_btn"></a>
+      <a href="#" target="_blank"><img src="images/twitter_logo.png" class="soclai_btn"></a>
+      <a href="#" target="_blank"><img src="images/line_logo.png" class="soclai_btn"></a>
+      <a href="#" target="_blank"><img src="images/yt_logo.png" class="soclai_btn"></a>
+   </div> 
+
+      <p class="copyright">
+          建議使用Chrome、Firefox、Safari、IE11以上瀏覽器<br>Copyright © 2023 天下實驗室企劃製作.All rights reserved.版權所有，禁止擅自轉貼節錄
+      </p>  
+
+
+
+ </div><!--footer end-->
+
+
+
+</div><!--wraper end-->
+
+
+
+
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
 var swiper1 = new Swiper('#swiper1', {
@@ -533,5 +446,6 @@ disableOnInteraction: false,
 pagination: false // 關閉 pagination dots
 });
 </script>
+
 </body>
 </html>
