@@ -17,7 +17,7 @@ body {
 }
 
 .company_profile p{
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 400;
   color: #000;
   text-align: left;
@@ -27,7 +27,7 @@ body {
 
 .company_profile p::first-letter {
   font-size: 7.5rem;
-  font-weight: 700;
+  font-weight: 800;
   -webkit-initial-letter: 4;
           initial-letter: 4;
           color: #053ECC;
@@ -171,12 +171,12 @@ img {
 h1 {
     font-size: 2rem;
     color: #fff;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 1.5;
 }
 
 p {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 400;
     color: #fff;
     margin-top: 20px;
@@ -351,7 +351,9 @@ p {
    
 
     .podcast{
-    background: url(../images/bg_podcast.jpg);
+    background: #fff;    
+    background-image: url(../images/bg_podcast.jpg);
+    background-size: cover;
     }
 
     .podcast .swiper-wrapper {
