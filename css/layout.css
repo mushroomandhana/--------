@@ -80,11 +80,11 @@ body{
 .goTop{
 	position:fixed;
 	z-index:100;
-	width:40px;
-	height:40px;
+	width:54px;
+	height:auto;
 	display:none;
-  bottom:150px;
-  right:30px;
+	bottom:40px;
+	right:40px;
 	}
 .goTop:hover{
  opacity:0.8;
@@ -150,7 +150,7 @@ body{
 	 font-family: 'Roboto', sans-serif;
 	 font-weight: 100;
 	 font-size: 40px;
-	 color: #6a572a;
+	 color: #fff;
 	 min-height: 45px;
 	 padding: 15px;
 	 text-align: center;
@@ -170,7 +170,7 @@ body{
 	 background: transparent;
 }
  .menu-sliders:nth-child(odd) {
-	 background: #ffc933;
+	 background: #043BC4;
 }
 
 
@@ -180,18 +180,26 @@ body{
 	height: 66px;
 	background-color: #ffffff;
     position: fixed;
-    z-index: 10;
+    z-index: 999;
     	-moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 	}
+
+#logo_fortune{
+		position: relative;
+		float: left;
+		z-index: 1;
+		height: 38px;
+		margin: 14px 0px 0px 100px;
+}
 
 #logo{
 		position: relative;
 		float: left;
 		z-index: 1;
 		height: 38px;
-		margin: 14px 0px 0px 100px;
+		margin: 14px 0px 0px 24px;
 }
 
 .bussiness_name{
@@ -280,9 +288,18 @@ body{
 }
 
 
-.kv_bg img {
+.kv_bg img,
+.kv_bg_mobile {
 	width: 100%;
 	height: auto;
+}
+
+.kv_bg_mobile {
+	display: block;
+}
+
+.kv_bg_mobile {
+	display: none;
 }
 
 .kv_logo{
@@ -344,7 +361,8 @@ body{
 	top:0px
 }
 
-.kv_bg{
+.kv_bg,
+.kv_bg_mobile{
 	position: relative;
 	width: 100%;
 	height: auto;
@@ -425,7 +443,7 @@ body{
   top: 20px;
 }
 #nav-icon3.open span{
-	background: #000000;
+	background: #fff;
 }
 
 #nav-icon3.open span:nth-child(1) {
@@ -657,7 +675,8 @@ section{
     box-sizing: border-box;
     padding: 50px 20px 50px 20px;
     color: #ffffff;
-    background: #f9f9f9;
+    /* background: #f9f9f9; */
+	background: #fff;
 	}
 
 .app_btn_group{
@@ -702,7 +721,9 @@ section{
 	position: relative;
 }
 
-
+.copyright a{
+	color: #383838;
+}
 
 
 
@@ -780,7 +801,8 @@ section{
 		top:0px
 	}
 	
-	.kv_bg{
+	.kv_bg,
+	.kv_bg_mobile{
 		position: relative;
 		width: 100%;
 		height: auto;
@@ -858,8 +880,14 @@ section{
 }
 
 
-
-
+@media screen and (max-width: 640px) {
+	.kv_bg{
+		display: none;
+	}
+	.kv_bg_mobile{
+		display: block;
+	}
+}
 
 @media screen and (max-width: 680px) {
 
@@ -892,13 +920,21 @@ section{
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
 		}
+
+	#logo_fortune{
+			position: relative;
+			float: left;
+			z-index: 1;
+			height: 24px;
+			margin: 18px 0px 0px 68px;
+	}
 	
 	#logo{
 			position: relative;
 			float: left;
 			z-index: 1;
 			height: 24px;
-			margin: 18px 0px 0px 60px;
+			margin: 18px 0px 0px 20px;
 	}
 	
 	.bussiness_name{
