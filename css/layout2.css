@@ -202,6 +202,7 @@ p {
 }
 
 .btn_more {
+    box-sizing: border-box;
     display: inline-block;
     font-size: 1.25em;
     line-height: 1.5;
@@ -212,7 +213,8 @@ p {
     margin-top: 40px;
 }
 
-.btn_more:hover {
+.btn_more:hover,
+.btn_more:hover a {
     cursor: pointer;
     color: #fff;
     background: #001B60;
