@@ -12,6 +12,7 @@ body {
     justify-content: center;
     padding: 176px 20px;
     background: url(../images/bg_company_profile.jpg);
+    background-size: cover;
     background-position: right 0% bottom 0%;
     
 }
@@ -74,30 +75,30 @@ body {
 
 
 .area1 .swiper-container {
-order: 1;
+order: 2;
 }
 
 .advertorial-img {
-order: 1;
+order: 2;
 width: 50%;
 }
 
 .advertorial_container {
-    order: 2;
+    order: 1;
     width: 50%;
 }
 
 .area1_container {
-order: 2;
+order: 1;
 width: 50%;
 }
 
 .area2 .swiper-container {
-order: 2;
+order: 1;
 }
 
 .area2_container{
-order: 1;
+order: 2;
 width: 50%;
 }
 
@@ -227,6 +228,7 @@ p {
     display: block;
     padding: 121px 0;
     background: url(../images/bg_podcast.jpg);
+    background-size: cover;
     background-position: right 0% bottom 0%;
 }
 
@@ -273,7 +275,7 @@ p {
     .aadvertorial .advertorial-container,
     .area1 .swiper-container,
     .area2 .swiper-container {
-    order: 1;
+    order: 2;
     }
 
     .swiper-button-next, .swiper-button-prev {
@@ -314,7 +316,7 @@ p {
     .area1 .swiper-container,
     .area1_container,
     .area2_container {
-    order: 2;
+    order: 1;
     }
 
     .advertorial_container,
@@ -352,9 +354,16 @@ p {
 
     .podcast{
     background: #fff;    
-    background-image: url(../images/bg_podcast.jpg);
+    background-image: url(../images/bg_podcast_pad_and_mobile.jpg);
     background-size: cover;
+    color: #fff;
     }
+
+    .podcast_area2_container h1,
+    .podcast_area2_container p{
+        color: #fff;
+    }
+
 
     .podcast .swiper-wrapper {
     padding: 20px 0;
@@ -389,6 +398,11 @@ p {
         color: #000;
     }
 
+    .podcast_area2_container h1,
+    .podcast_area2_container p {
+        color: #fff;
+    }
+
     .advertorial_container,
     .area1_container,
     .area2_container {
@@ -396,7 +410,8 @@ p {
     }
 
     .podcast{
-    background: url(../images/bg_podcast.jpg);
+    background: url(../images/bg_podcast_pad_and_mobile.jpg);
+    background-size: cover;
     }
 
     .swiper-button-next, .swiper-button-prev {
