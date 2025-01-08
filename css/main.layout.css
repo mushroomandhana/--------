@@ -159,6 +159,10 @@ button:focus {
 	outline: none;
 }
 
+*:focus {
+    outline: none;
+}
+
 body {
 	background: #ffffff;
 	font-family: 'Noto Sans TC', sans-serif;
