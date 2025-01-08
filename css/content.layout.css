@@ -1,0 +1,653 @@
+.company_profile {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 176px 80px;
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.company_profile::before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/bg_company_profile.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+
+    /* 應用動畫 */
+    -webkit-animation: zoomin 10s ease-in infinite;
+    animation: zoomin 10s ease-in infinite;
+}
+
+/* Zoom in Keyframes */
+@-webkit-keyframes zoomin {
+    0% {
+        transform: scale(1);
+        background-position: 75% 50%;
+    }
+
+    50% {
+        transform: scale(1.05);
+        background-position: 75% 50%;
+    }
+
+    /* 輕微放大 */
+    100% {
+        transform: scale(1);
+        background-position: 75% 50%;
+    }
+}
+
+@keyframes zoomin {
+    0% {
+        transform: scale(1);
+        background-position: 75% 50%;
+    }
+
+    50% {
+        transform: scale(1.05);
+        background-position: 75% 50%;
+    }
+
+    /* 輕微放大 */
+    100% {
+        transform: scale(1);
+        background-position: 75% 50%;
+    }
+}
+
+.company_profile p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #000;
+    text-align: left;
+    line-height: 1.6666;
+    padding-top: 2px;
+}
+
+.company_profile p::first-letter {
+    font-size: 7.5rem;
+    font-weight: 800;
+    -webkit-initial-letter: 4;
+    initial-letter: 4;
+    color: #053ECC;
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.even_area,
+.odd_area {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    background: blue;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.swiper-button-next:after {
+    display: block;
+    content: ' ';
+    background-image: url('../images/swiper_btn_next.svg');
+    background-size: 54px 54px;
+    height: 54px;
+    width: 54px;
+    /* content: url(../images/swiper_btn_next.svg); */
+}
+
+.swiper-button-prev:after {
+    display: block;
+    content: ' ';
+    background-image: url('../images/swiper_btn_prev.svg');
+    background-size: 54px 54px;
+    height: 54px;
+    width: 54px;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    opacity: 0.8;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    position: absolute;
+    top: var(--swiper-navigation-top-offset, 90%);
+    width: calc(var(--swiper-navigation-size)/ 14 * 36);
+}
+
+.advertorial_img,
+.podcast_player_area,
+.even_area .swiper-container {
+    order: 2;
+}
+
+.podcast_player_area {
+    width: 50%;
+    height: auto;
+}
+
+.advertorial_img img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.advertorial_img img:hover {
+    transform: scale(1.125);/* 放大1.125倍 */
+}
+
+.odd_area .swiper-container,
+.podcast_player_area {
+    order: 1;
+}
+
+.even_area_container,
+.odd_area_container {
+    width: 50%;
+}
+
+.even_area_container {
+    order: 1;
+}
+
+
+.odd_area_container {
+    order: 2;
+}
+
+.swiper-wrapper img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.swiper-slide img:hover {
+    transform: scale(1.125);/* 放大1.125倍 */
+}
+
+.advertorial_img,
+#swiper1,
+#swiper2 {
+    width: 50%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.even_area img,
+.even_area svg,
+.odd_area img,
+.odd_area svg {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+img {
+    border-style: none;
+}
+
+.even_area_container,
+.odd_area_container {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 0 80px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 800;
+    line-height: 1.3333;
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.6666;
+}
+
+.podcast.odd_area p,
+.odd_area p,
+.even_area p {
+    margin-top: 20px;
+}
+
+.advertorial .even_area_container h1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.advertorial .even_area_container p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn_more {
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 1.25em;
+    line-height: 1.3333;
+    font-weight: 400;
+    padding: 12px 20px;
+    color: #043BC4;
+    background: #fff;
+    margin-top: 40px;
+}
+
+.btn_more:hover,
+.btn_more:hover a {
+    cursor: pointer;
+    color: #fff;
+    background: #001B60;
+}
+
+.podcast .podcast_player{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    /* 確保內容在背景圖片之上 */
+    box-sizing: border-box;
+    display: block;
+    padding: 121px 0;
+}
+
+.podcast .podcast_player::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/bg_podcast.jpg);
+    background-size: cover;
+    background-position: right 0% bottom 0%;
+    transition: transform 0.3s ease-in-out;
+    z-index: -1;
+    /* 確保背景圖片在內容後面 */
+}
+
+.podcast .podcast_player:hover::before {
+    transform: scale(1.125);/* 放大1.125倍 */
+}
+
+.podcast iframe {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    /* max-width: 800px; */
+    padding: 0 80px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.podcast iframe:nth-child(1) {
+    margin-bottom: 54px;
+
+}
+
+@media (max-width: 1560px) {
+    .podcast .podcast_player {
+        padding: 80px 0;
+    }
+}
+
+@media (max-width: 1280px) {
+    .company_profile {
+        padding: 40px;
+        height: 100%;
+        min-height: 360px;
+    }
+
+    .even_area,
+    .odd_area {
+        padding: 40px;
+        align-items: start;
+        height: 100%;
+        min-height: 448px;
+    }
+
+    .even_area_container,
+    .odd_area_container {
+        padding: 0 40px 0 0;
+    }
+
+    .advertorial_img,
+    .podcast_player_area,
+    .even_area .swiper-container,
+    .odd_area .swiper-container {
+        order: 2;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        position: absolute;
+        top: var(--swiper-navigation-top-offset, 90%);
+        width: calc(var(--swiper-navigation-size) / 20* 27);
+    }
+
+    .swiper-button-next:after {
+        display: block;
+        content: ' ';
+        background-image: url('../images/swiper_btn_next.svg');
+        background-size: 40px 40px;
+        height: 40px;
+        width: 40px;
+        /* content: url(../images/swiper_btn_next.svg); */
+    }
+
+    .swiper-button-prev:after {
+        display: block;
+        content: ' ';
+        background-image: url('../images/swiper_btn_prev.svg');
+        background-size: 40px 40px;
+        height: 40px;
+        width: 40px;
+        /* content: url(../images/swiper_btn_prev.svg); */
+    }
+
+    .odd_area {
+        background: #fff;
+    }
+
+    .podcast.odd_area h1,
+    .podcast.odd_area p {
+        color: #fff;
+    }
+
+    .odd_area h1,
+    .odd_area p {
+        color: #000;
+    }
+
+    .even_area_container,
+    .odd_area_container {
+        order: 1;
+    }
+
+
+    .podcast {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        box-sizing: border-box;
+        background: #fff;
+        color: #fff;
+    }
+
+    .podcast::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(../images/bg_podcast_pad_and_mobile.jpg) no-repeat center center;
+        background-size: cover;
+        transition: transform 0.3s ease-in-out;
+        z-index: -1;
+        /* 確保背景圖片在內容後面 */
+    }
+
+    .podcast:hover::before {
+        transform: scale(1.125);
+        /* 放大1.125倍 */
+    }
+
+    .podcast .podcast_player::before {
+        content: "";
+        background: none;
+    }
+
+    .podcast iframe:nth-child(1) {
+        margin-bottom: 40px;
+    }
+
+    .podcast_area2_container h1,
+    .podcast_area2_container p {
+        color: #fff;
+    }
+
+
+    .podcast .podcast_player {
+        padding: 20px 0;
+        background: none;
+    }
+
+
+
+    .podcast .podcast_player {
+        padding: 0;
+    }
+
+    .podcast iframe {
+        padding: 0;
+    }
+
+}
+
+@media (max-width: 1080px) {
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        position: absolute;
+        top: var(--swiper-navigation-top-offset, 86%);
+        width: calc(var(--swiper-navigation-size) / 20* 27);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .company_profile {
+        padding: 32px;
+    }
+
+    .even_area,
+    .odd_area {
+        display: block;
+        padding: 32px;
+    }
+
+    .odd_area {
+        background: #fff;
+    }
+
+
+    .even_area_container,
+    .odd_area_container {
+        padding: 0;
+    }
+
+
+    .even_area_container,
+    .odd_area_container,
+    .advertorial_img,
+    #swiper1,
+    #swiper2 {
+        width: 100%;
+    }
+
+    .odd_area h1,
+    .odd_area p {
+        color: #000;
+    }
+
+    .podcast_player_area {
+        width: 100%;
+        height: auto;
+    }
+
+    .podcast iframe:nth-child(1) {
+        margin-bottom: 12px;
+    }
+
+    .podcast_area2_container h1,
+    .podcast_area2_container p {
+        color: #fff;
+    }
+
+
+    .podcast .odd_area_container {
+        margin-top: 0;
+    }
+
+    .podcast .odd_area_container:nth-child(2),
+    .even_area_container,
+    .odd_area_container {
+        margin-top: 24px;
+    }
+
+    .podcast {
+        background: url(../images/bg_podcast_pad_and_mobile.jpg);
+        background-size: cover;
+    }
+
+    .btn_more {
+        margin-top: 28px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        position: absolute;
+        top: var(--swiper-navigation-top-offset, 90%);
+        width: calc(var(--swiper-navigation-size) / 20* 27);
+    }
+
+}
+
+@media (max-width: 667px) {
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        position: absolute;
+        top: var(--swiper-navigation-top-offset, 91%);
+        width: calc(var(--swiper-navigation-size) / 24* 27);
+    }
+
+    .swiper-button-next:after {
+        display: block;
+        content: ' ';
+        background-image: url('../images/swiper_btn_next.svg');
+        background-size: 32px 32px;
+        height: 32px;
+        width: 32px;
+        /* content: url(../images/swiper_btn_next.svg); */
+    }
+
+    .swiper-button-prev:after {
+        display: block;
+        content: ' ';
+        background-image: url('../images/swiper_btn_prev.svg');
+        background-size: 32px 32px;
+        height: 32px;
+        width: 32px;
+        /* content: url(../images/swiper_btn_prev.svg); */
+    }
+}
+
+
+@media (max-width: 540px) {
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        position: absolute;
+        top: var(--swiper-navigation-top-offset, 88%);
+        width: calc(var(--swiper-navigation-size) / 20* 20);
+    }
+}
+
+
+@media (max-width: 414px) {
+
+    .company_profile p::first-letter {
+        font-size: 6.5rem;
+    }
+
+    .podcast.odd_area p,
+    .odd_area p,
+    .even_area p {
+        margin-top: 16px;
+    }
+
+    .podcast.odd_area h1,
+    .even_area h1,
+    .advertorial .even_area_container h1,
+    .odd_area_container h1,
+    .even_area_container h1 {
+        font-size: 1.75rem;
+    }
+
+    .company_profile p,
+    .podcast.odd_area p,
+    p {
+        font-size: 1.25rem;
+    }
+
+    .btn_more {
+        font-size: 1.125em;
+        margin-top: 24px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        position: absolute;
+        top: var(--swiper-navigation-top-offset, 86%);
+        width: calc(var(--swiper-navigation-size) / 20* 20);
+    }
+}
+
+
+@media (max-width: 375px) {
+    .company_profile {
+        min-height: 360px;
+        padding: 24px;
+    }
+
+    .even_area,
+    .odd_area {
+        padding: 24px;
+    }
+
+    .podcast iframe:nth-child(1) {
+        margin-bottom: 0;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        position: absolute;
+        top: var(--swiper-navigation-top-offset, 84%);
+        width: calc(var(--swiper-navigation-size) / 20* 20);
+    }
+}
+
+@mixin clearfix() {
+    &::after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+}
